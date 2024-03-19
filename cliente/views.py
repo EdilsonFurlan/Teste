@@ -11,3 +11,8 @@ def add_cliente(request):
     else:
         form = ClienteForm()
     return render(request, 'add_cliente.html', {'form': form})
+
+
+def listar_clientes(request):
+    clientes = Cliente.objects.all()
+    return render(request, 'list_clientes.html', {'clientes': clientes})
